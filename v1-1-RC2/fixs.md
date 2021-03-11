@@ -703,7 +703,7 @@ A cryptographic key is called ephemeral if it is generated for each execution of
 
 ## List of recommended cipher suites
 
-![](media/List of recommended cipher suites.png)
+![](media/Recommended-cipher-suites.png)
 
 # Appendix B -- Relevant RFCs
 
