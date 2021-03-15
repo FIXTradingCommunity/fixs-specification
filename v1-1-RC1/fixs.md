@@ -52,9 +52,9 @@ The history can be summarised as follows:
 
 -   TLS v1.0 -- Defined by [RFC 2246](https://tools.ietf.org/html/rfc2246) (January 1999) (widely deprecated Jan 2020)
 
--   SSL v3 -- Deprecated by RFC 7568 (June 2015) and vulnerable to POODLE, specified by RFC 6101 (August 2011)
+-   SSL v3 -- Deprecated by [RFC 7568](https://tools.ietf.org/html/rfc7568) (June 2015) and vulnerable to POODLE, specified by [RFC 6101](https://tools.ietf.org/html/rfc6101) (August 2011)
 
--   SSL v2 -- Prohibited in TLS by RFC 6176 (March 2011),
+-   SSL v2 -- Prohibited in TLS by [RFC 6176](https://tools.ietf.org/html/rfc6176) (March 2011),
 
 -   SSL -- Originally from Netscape
 
@@ -671,8 +671,13 @@ A cryptographic key is called ephemeral if it is generated for each execution of
 +-------------------------+-----------+------------+---------------------------------------------------------------------------------+
 | ECDH_ECDSA              | RFC 4492  | OK         |                                                                                 |
 +-------------------------+-----------+------------+---------------------------------------------------------------------------------+
-| Using DSA:              |           |            |                                                                                 |
+
+\
+**Using DSA:**
+
 +-------------------------+-----------+------------+---------------------------------------------------------------------------------+
+| Acronym                 | Reference | Status     | Description                                                                     |
++=========================+===========+============+=================================================================================+
 | DHE_DSS                 | Base 1.2  | OK         | Diffie-Hellman exchange with Ephemeral keys (DHE) and DSS authentication        |
 +-------------------------+-----------+------------+---------------------------------------------------------------------------------+
 | DH_DSS                  | Base 1.2  | OK         |                                                                                 |
@@ -703,7 +708,7 @@ A cryptographic key is called ephemeral if it is generated for each execution of
 
 ## List of recommended cipher suites
 
-![](media/List of recommended cipher suites.png)
+![](media/List-of-recommended-cipher-suites.png)
 
 # Appendix B -- Relevant RFCs
 
@@ -764,27 +769,27 @@ OpenSSL and Stunnel
 
 Schannel SSP Windows (8.1 / 2012R2, 10) (8 / 2012) (7 / 2008R2) (Vista / 2008) (XP / 2003)
 
-https://technet.microsoft.com/en-us/library/dn786419(v=ws.11).aspx
+<https://technet.microsoft.com/en-us/library/dn786419(v=ws.11).aspx>
 
-https://msdn.microsoft.com/en-gb/library/windows/desktop/aa374757(v=vs.85).aspx
+<https://msdn.microsoft.com/en-gb/library/windows/desktop/aa374757(v=vs.85).aspx>
 
-https://technet.microsoft.com/en-us/library/hh831771(v=ws.11).aspx
+<https://technet.microsoft.com/en-us/library/hh831771(v=ws.11).aspx>
 
-https://technet.microsoft.com/en-us/library/dn786429(v=ws.11).aspx
+<https://technet.microsoft.com/en-us/library/dn786429(v=ws.11).aspx>
 
 ***Schannel uses CryptoAPI***
 
-https://msdn.microsoft.com/en-us/library/windows/desktop/aa379809(v=vs.85).aspx
+<https://msdn.microsoft.com/en-us/library/windows/desktop/aa379809(v=vs.85).aspx>
 
 ***Web API***
 
-http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api
+<http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api>
 
-http://chimera.labs.oreilly.com/books/1234000001708/ch15.html
+<http://chimera.labs.oreilly.com/books/1234000001708/ch15.html>
 
-http://www.codeproject.com/Articles/838276/Web-API-Thoughts-of-Working-with-HTTPS
+<http://www.codeproject.com/Articles/838276/Web-API-Thoughts-of-Working-with-HTTPS>
 
-http://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html
+<http://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html>
 
 ## BouncyCastle
 

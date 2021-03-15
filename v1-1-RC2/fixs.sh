@@ -19,6 +19,14 @@ echo FIXS document version created
 # Create base online version without disclaimer
 pandoc $FILES -o "$TARGET/debug/FIXSONLINE.html" --metadata-file="$YAML" -s --toc --toc-depth=2
 
+# Remove title as it is redundant to page header
+sed -i '.bak1' '/<h1 class="title">/d' "$TARGET/debug/FIXSONLINE.html"
+
+# Add header for table of contents
+sed -i '.bak2' '/<nav id="TOC" role="doc-toc">/i\
+<h1 id="table-of-contents">Table of Contents<\/h1>\
+' "$TARGET/debug/FIXSONLINE.html"
+
 # Create separate online versions for production and test website by including appropriate link prefixes
 sed 's,img src="media/,img src="https://www.fixtrading.org'$WPFOLDER',g' "$TARGET/debug/FIXSONLINE.html" > "$TARGET/html/FIXSONLINE_PROD.html"
 sed s/www.fixtrading.org/www.technical-fixprotocol.org/g "$TARGET/html/FIXSONLINE_PROD.html" > "$TARGET/html/FIXSONLINE_TEST.html"

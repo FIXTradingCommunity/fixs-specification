@@ -160,7 +160,6 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">FIX-over-TLS (FIXS)</h1>
 <p class="subtitle">Technical Specification</p>
 <p class="author">Version 1.1 – Release Candidate 1 – February 5, 2021</p>
 <p class="author"></p>
@@ -173,6 +172,7 @@
 <p class="author">CANDIDATE IS NECESSARY OR IF THE RELEASE CANDIDATE CAN BE PROMOTED TO BECOME A FIX</p>
 <p class="author">TECHNICAL STANDARD DRAFT.</p>
 </header>
+<h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TOC" role="doc-toc">
 <ul>
 <li><a href="#introduction">Introduction</a>
@@ -257,8 +257,8 @@
 <li><p>TLS v1.2 – Updated by <a href="https://tools.ietf.org/html/rfc5246">RFC 5246</a> (August 2008)</p></li>
 <li><p>TLS v1.1 – Updated by <a href="https://tools.ietf.org/html/rfc4346">RFC 4346</a> (April 2006) (widely deprecated Jan 2020)</p></li>
 <li><p>TLS v1.0 – Defined by <a href="https://tools.ietf.org/html/rfc2246">RFC 2246</a> (January 1999) (widely deprecated Jan 2020)</p></li>
-<li><p>SSL v3 – Deprecated by RFC 7568 (June 2015) and vulnerable to POODLE, specified by RFC 6101 (August 2011)</p></li>
-<li><p>SSL v2 – Prohibited in TLS by RFC 6176 (March 2011),</p></li>
+<li><p>SSL v3 – Deprecated by <a href="https://tools.ietf.org/html/rfc7568">RFC 7568</a> (June 2015) and vulnerable to POODLE, specified by <a href="https://tools.ietf.org/html/rfc6101">RFC 6101</a> (August 2011)</p></li>
+<li><p>SSL v2 – Prohibited in TLS by <a href="https://tools.ietf.org/html/rfc6176">RFC 6176</a> (March 2011),</p></li>
 <li><p>SSL – Originally from Netscape</p></li>
 </ul>
 <h3 id="basics-of-the-tls-protocol">Basics of the TLS protocol</h3>
@@ -940,12 +940,26 @@ Do not use</td>
 <td>OK</td>
 <td></td>
 </tr>
-<tr class="even">
-<td>Using PSKs:</td>
-<td></td>
-<td></td>
-<td></td>
+</tbody>
+</table>
+<p><br />
+<strong>Using PSKs:</strong></p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Acronym</th>
+<th>Reference</th>
+<th>Status</th>
+<th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr class="odd">
 <td>ECDHE_PSK</td>
 <td>RFC 5489</td>
@@ -963,7 +977,7 @@ Do not use</td>
 <td>RFC 4279</td>
 <td>OK (*)</td>
 <td><p>Pre-shared Key (PSK);</p>
-<p>(✱) symmetric keys need to be exchanged securely by other means</p></td>
+<p>(*) symmetric keys need to be exchanged securely by other means</p></td>
 </tr>
 </tbody>
 </table>
@@ -997,19 +1011,33 @@ Do not use</td>
 <td>OK</td>
 <td></td>
 </tr>
-<tr class="odd">
-<td>Using DSA:</td>
-<td></td>
-<td></td>
-<td></td>
+</tbody>
+</table>
+<p><br />
+<strong>Using DSA:</strong></p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Acronym</th>
+<th>Reference</th>
+<th>Status</th>
+<th>Description</th>
 </tr>
-<tr class="even">
+</thead>
+<tbody>
+<tr class="odd">
 <td>DHE_DSS</td>
 <td>Base 1.2</td>
 <td>OK</td>
 <td>Diffie-Hellman exchange with Ephemeral keys (DHE) and DSS authentication</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>DH_DSS</td>
 <td>Base 1.2</td>
 <td>OK</td>
@@ -1086,7 +1114,7 @@ Do not use</td>
 </tbody>
 </table>
 <h2 id="list-of-recommended-cipher-suites">List of recommended cipher suites</h2>
-<p><img src="media/List%20of%20recommended%20cipher%20suites.png" /></p>
+<p><img src="media/List-of-recommended-cipher-suites.png" /></p>
 <h1 id="appendix-b-relevant-rfcs">Appendix B – Relevant RFCs</h1>
 <p>Relevant IETF Request for Comments (RFCs) for TLS and TLS cipher suites:</p>
 <table>
@@ -1234,17 +1262,17 @@ Do not use</td>
 <h2 id="microsoft-secure-channel-schannel">Microsoft Secure Channel (Schannel)</h2>
 <p><strong><em>.NET SslStream</em></strong></p>
 <p>Schannel SSP Windows (8.1 / 2012R2, 10) (8 / 2012) (7 / 2008R2) (Vista / 2008) (XP / 2003)</p>
-<p>https://technet.microsoft.com/en-us/library/dn786419(v=ws.11).aspx</p>
-<p>https://msdn.microsoft.com/en-gb/library/windows/desktop/aa374757(v=vs.85).aspx</p>
-<p>https://technet.microsoft.com/en-us/library/hh831771(v=ws.11).aspx</p>
-<p>https://technet.microsoft.com/en-us/library/dn786429(v=ws.11).aspx</p>
+<p><a href="https://technet.microsoft.com/en-us/library/dn786419(v=ws.11).aspx" class="uri">https://technet.microsoft.com/en-us/library/dn786419(v=ws.11).aspx</a></p>
+<p><a href="https://msdn.microsoft.com/en-gb/library/windows/desktop/aa374757(v=vs.85).aspx" class="uri">https://msdn.microsoft.com/en-gb/library/windows/desktop/aa374757(v=vs.85).aspx</a></p>
+<p><a href="https://technet.microsoft.com/en-us/library/hh831771(v=ws.11).aspx" class="uri">https://technet.microsoft.com/en-us/library/hh831771(v=ws.11).aspx</a></p>
+<p><a href="https://technet.microsoft.com/en-us/library/dn786429(v=ws.11).aspx" class="uri">https://technet.microsoft.com/en-us/library/dn786429(v=ws.11).aspx</a></p>
 <p><strong><em>Schannel uses CryptoAPI</em></strong></p>
-<p>https://msdn.microsoft.com/en-us/library/windows/desktop/aa379809(v=vs.85).aspx</p>
+<p><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa379809(v=vs.85).aspx" class="uri">https://msdn.microsoft.com/en-us/library/windows/desktop/aa379809(v=vs.85).aspx</a></p>
 <p><strong><em>Web API</em></strong></p>
-<p>http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api</p>
-<p>http://chimera.labs.oreilly.com/books/1234000001708/ch15.html</p>
-<p>http://www.codeproject.com/Articles/838276/Web-API-Thoughts-of-Working-with-HTTPS</p>
-<p>http://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html</p>
+<p><a href="http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api" class="uri">http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api</a></p>
+<p><a href="http://chimera.labs.oreilly.com/books/1234000001708/ch15.html" class="uri">http://chimera.labs.oreilly.com/books/1234000001708/ch15.html</a></p>
+<p><a href="http://www.codeproject.com/Articles/838276/Web-API-Thoughts-of-Working-with-HTTPS" class="uri">http://www.codeproject.com/Articles/838276/Web-API-Thoughts-of-Working-with-HTTPS</a></p>
+<p><a href="http://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html" class="uri">http://vineetyadav.com/development/net/configure-self-hosted-webapi-in-windows-service-to-use-ssl.html</a></p>
 <h2 id="bouncycastle">BouncyCastle</h2>
 <p>Bouncycastle.org for Java</p>
 <h2 id="rsa-bsafe">RSA BSAFE</h2>
