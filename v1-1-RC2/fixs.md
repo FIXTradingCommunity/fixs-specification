@@ -177,7 +177,7 @@ Our minimum recommendation for authentication is to use either Mutual TLS or to 
 
 ![](media/Leaf.png)
 
-One method by which a certificate's validity can, and that the other party is genuine, is to match the certificate to an expected certificate. We call this "*Leaf Certificate Pinning*" in FIXS.
+One method by which a certificate's validity can be checked, and that the other party is genuine, is to match the certificate to an expected certificate. We call this "*Leaf Certificate Pinning*" in FIXS.
 
 Initially, the party to be authenticated must have provided a copy of the certificate to the party performing the authentication. This should have been done securely by other means so that the authenticator knows it is a genuine copy of the certificate.
 
