@@ -195,7 +195,7 @@ It is good practice to include all of the certificates in a certificate chain wh
 
 Out-of-date certificates should not be used or accepted.
 
-Do not use a pinset for different entities or functions, i.e. for different purposes. For example, if Party A connects to parties B and C, try to have different pinsets for the parties. Suppose the certificates for Party C are mixed with the certificates for Party B. In that case, it may be possible for Party B to act on behalf of Party C (and likewise for Party C to act on behalf of Party B), which could be a severe breach of security.
+It is not recommended to use a pinset for different entities or functions, i.e. for different purposes. For example, if Party A connects to parties B and C, he or she should have different pinsets for the parties. Suppose the certificates for Party C are mixed with the certificates for Party B. In that case, it may be possible for Party B to act on behalf of Party C (and likewise for Party C to act on behalf of Party B) when Party A does not take enough care in distinguishing them, which could be a severe breach of security.
 
 It is important to ensure FIX messages and their content are authorized for the party authenticated at the TLS level or using FIXA. For example, it should not be possible for Party B to send messages on behalf of Party C unless it is authorized to do so.
 
@@ -203,7 +203,7 @@ It is important to ensure FIX messages and their content are authorized for the 
 
 ![](media/Cogs.png)
 
-Rather than pin every leaf certificate, a certificate can be validated through its certificate chain. A CA certificate from the chain is pinned instead, establishing a trust anchor to that point, and, from this, it is possible to validate and trust potentially numerous leaf certificates. This is what we term "*Certificate Validation with CA Pinning*" in FIXS. It is essentially the same as how public certificate validation works in web browsers, except CA certificates are not generally pre-pinned as in web browser or operating system software.
+Rather than pin every leaf certificate, a certificate can be validated through its certificate chain, including the verifications of signatures corresponds to the certificates along the chain. A CA certificate from the chain is pinned instead, establishing a trust anchor to that point, and, from this, it is possible to validate and trust potentially numerous leaf certificates. This is what we term "*Certificate Validation with CA Pinning*" in FIXS. It is essentially the same as how public certificate validation works in web browsers, except CA certificates are not generally pre-pinned as in web browser or operating system software.
 
 The leaf certificate has to be signed by a CA rather than being self-signed. As a result, the certificate can be verified against a certificate for the CA itself, proving that the CA issued the certificate and that the certificate is genuine.
 
@@ -249,13 +249,13 @@ This chapter provides our minimum recommended parameters for TLS. This includes 
 
 ## Protocol version
 
-***In line with the widely accepted deprecation of TLS and SSL versions prior to 1.2, FIX requires the use of TLS 1.2 or TLS1.3 only. Support for prior versions should be limited to transitional phases only.***
+***In line with the widely accepted deprecation of TLS and SSL versions prior to but not including 1.2, FIX requires the use of TLS 1.2 or TLS1.3 only. Support for prior versions should be limited to transitional phases only.***
 
 ## Protocol features
 
 ### In general
 
-***Session caching -- Session caching behavior changed between TLC1.2 and TLS1.3. TLS1.3 has a higher overhead for resumption and given that TLS1.3 has a reduced overhead for full-handshake session establishment. Users are advised to consider what is best for their deployment.***
+***Session caching -- Session caching behavior changed between TLS1.2 and TLS1.3. TLS1.3 has a higher overhead for resumption and given that TLS1.3 has a reduced overhead for full-handshake session establishment. Users are advised to consider what is best for their deployment.***
 
 ***TLS1.2 -- Session caching recommended***
 
